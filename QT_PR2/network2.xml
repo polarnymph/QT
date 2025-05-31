@@ -1,0 +1,14 @@
+<deploymentDiagram name="LoadBalancedArchitecture">
+  <node name="Client" type="device"/>
+  <node name="LoadBalancer" type="appliance"/>
+  <node name="WebServer1" type="server">
+    <component name="WebApp" />
+  </node>
+  <node name="WebServer2" type="server">
+    <component name="WebApp" />
+  </node>
+  <connection from="Client" to="LoadBalancer"/>
+  <connection from="LoadBalancer" to="WebServer1"/>
+  <connection from="LoadBalancer" to="WebServer2"/>
+</deploymentDiagram>
+

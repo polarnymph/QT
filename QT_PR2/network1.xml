@@ -1,0 +1,12 @@
+<deploymentDiagram name="WebAppBasic">
+  <node name="ClientPC" type="device"/>
+  <node name="WebServer" type="server">
+    <component name="FrontendApp" />
+  </node>
+  <node name="AppServer" type="server">
+    <component name="BackendService" />
+  </node>
+  <connection from="ClientPC" to="WebServer"/>
+  <connection from="WebServer" to="AppServer"/>
+</deploymentDiagram>
+

@@ -1,0 +1,14 @@
+<deploymentDiagram name="DBAndCache">
+  <node name="AppServer" type="server">
+    <component name="Application" />
+  </node>
+  <node name="DatabaseServer" type="server">
+    <component name="PostgreSQL" />
+  </node>
+  <node name="CacheServer" type="server">
+    <component name="Redis" />
+  </node>
+  <connection from="AppServer" to="DatabaseServer"/>
+  <connection from="AppServer" to="CacheServer"/>
+</deploymentDiagram>
+

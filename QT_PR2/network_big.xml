@@ -1,0 +1,50 @@
+<deploymentDiagram name="EnterpriseSystem">
+  <node name="Client" type="device"/>
+  
+  <node name="APIGateway" type="server">
+    <component name="API Gateway"/>
+  </node>
+
+  <node name="AuthServiceNode" type="server">
+    <component name="AuthService"/>
+  </node>
+
+  <node name="UserServiceNode" type="server">
+    <component name="UserService"/>
+  </node>
+
+  <node name="ProductServiceNode" type="server">
+    <component name="ProductService"/>
+  </node>
+
+  <node name="CacheServer" type="server">
+    <component name="Redis"/>
+  </node>
+
+  <node name="DatabaseServer" type="server">
+    <component name="PostgreSQL"/>
+  </node>
+
+  <node name="AnalyticsNode" type="server">
+    <component name="AnalyticsService"/>
+  </node>
+
+  <node name="CICDServer" type="server">
+    <component name="Jenkins"/>
+  </node>
+
+  <!-- Connections -->
+  <connection from="Client" to="APIGateway"/>
+  <connection from="APIGateway" to="AuthServiceNode"/>
+  <connection from="APIGateway" to="UserServiceNode"/>
+  <connection from="APIGateway" to="ProductServiceNode"/>
+  <connection from="AuthServiceNode" to="DatabaseServer"/>
+  <connection from="UserServiceNode" to="DatabaseServer"/>
+  <connection from="ProductServiceNode" to="DatabaseServer"/>
+  <connection from="ProductServiceNode" to="CacheServer"/>
+  <connection from="AnalyticsNode" to="DatabaseServer"/>
+  <connection from="CICDServer" to="AuthServiceNode"/>
+  <connection from="CICDServer" to="UserServiceNode"/>
+  <connection from="CICDServer" to="ProductServiceNode"/>
+</deploymentDiagram>
+

@@ -1,0 +1,18 @@
+<deploymentDiagram name="Microservices">
+  <node name="Gateway" type="server">
+    <component name="API Gateway" />
+  </node>
+  <node name="AuthService" type="server">
+    <component name="AuthService" />
+  </node>
+  <node name="UserService" type="server">
+    <component name="UserService" />
+  </node>
+  <node name="ProductService" type="server">
+    <component name="ProductService" />
+  </node>
+  <connection from="Gateway" to="AuthService"/>
+  <connection from="Gateway" to="UserService"/>
+  <connection from="Gateway" to="ProductService"/>
+</deploymentDiagram>
+
